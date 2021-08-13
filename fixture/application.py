@@ -1,5 +1,6 @@
 from selenium import webdriver
 from fixture.session import SessionHelper
+from fixture.project import ProjectHelper
 from selenium.webdriver.firefox.options import Options
 
 options = Options()
@@ -21,6 +22,7 @@ class Application:
             raise ValueError("Unrecognized browser %s" % browser)
         self.wd.implicitly_wait(1)
         self.session = SessionHelper(self)
+        self.project = ProjectHelper(self)
         self.base_url = base_url
 
     def is_valid(self):
@@ -36,9 +38,7 @@ class Application:
 
     def return_to_home_page(self):
         wd = self.wd
-        #if not (wd.current_url.endswith("addressbook/")):
-        wd.find_element_by_link_text("home").click()
-        wd.find_element_by_xpath("//input[@value='Send e-Mail']")
+        wd.find_element_by_link_text("My View").click()
 
     def destroy(self):
         self.wd.quit()
