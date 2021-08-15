@@ -27,6 +27,14 @@ class ProjectHelper:
         self.open_projects_page()
         self.project_cache = None
 
+    def delete_project(self, id):
+        wd = self.app.wd
+        self.open_projects_page()
+        self.open_project_by_id(id)
+        wd.find_element_by_xpath("//input[@value='Delete Project']").click()
+        wd.find_element_by_xpath("//input[@value='Delete Project']").click()
+        self.project_cache = None
+
     def fill_project_form(self, project):
         self.change_field_value("name", project.name)
         self.change_field_value("description", project.description)
@@ -44,3 +52,28 @@ class ProjectHelper:
         if text is not None:
             wd.find_element_by_name(field_name).click()
             Select(wd.find_element_by_name(field_name)).select_by_visible_text(text)
+
+    def get_project_list(self):
+        if self.project_cache is None:
+            wd = self.app.wd
+            self.app.return_to_home_page()
+            self.open_projects_page()
+            self.project_cache = []
+            for element in wd.find_elements_by_xpath("//tr[contains(@class, 'row-')]"
+                                                     "[not(contains(@class, 'category'))][not(ancestor::a)]"):
+                fields = element.find_elements_by_tag_name("td")
+                id = fields[0].find_element_by_tag_name("a").get_attribute("href").split("=", 1)[1]
+                name = fields[0].find_element_by_tag_name("a").text
+                self.project_cache.append(Project(name=name, id=id))
+        return list(self.project_cache)
+
+    def open_project_by_id(self, project_id):
+        wd = self.app.wd
+        for element in wd.find_elements_by_xpath("//tr[contains(@class, 'row-')]"
+                                                 "[not(contains(@class, 'category'))][not(ancestor::a)]"):
+            fields = element.find_elements_by_tag_name("td")
+            id = fields[0].find_element_by_tag_name("a").get_attribute("href").split("=", 1)[1]
+            name = fields[0].find_element_by_tag_name("a").text
+            if id == project_id:
+                wd.find_element_by_link_text(name).click()
+                break
