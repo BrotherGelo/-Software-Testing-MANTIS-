@@ -30,7 +30,7 @@ def app(request, config):
     #webadmin_config = load_config(request.config.getoption("--target"))['webadmin']
     if fixture is None or not fixture.is_valid():
         fixture = Application(browser=browser, config=config)
-        #fixture.session.login(username=webadmin_config['username'], password=webadmin_config['password'])
+        fixture.session.login(username=config['webadmin']['username'], password=config['webadmin']['password'])
     return fixture
 
 
