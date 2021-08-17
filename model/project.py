@@ -19,7 +19,6 @@ class Project:
                (self.description is None or other.description is None or self.description == other.description) and \
                (self.status is None or other.status is None or self.status == other.status)
 
-
     def id_or_max(self):
         if self.id:
             return int(self.id)

@@ -27,10 +27,10 @@ class ProjectHelper:
         self.open_projects_page()
         self.project_cache = None
 
-    def delete_project(self, id):
+    def delete_project(self, name):
         wd = self.app.wd
         self.open_projects_page()
-        self.open_project_by_id(id)
+        self.open_project(name)
         wd.find_element_by_xpath("//input[@value='Delete Project']").click()
         wd.find_element_by_xpath("//input[@value='Delete Project']").click()
         self.project_cache = None
@@ -67,13 +67,13 @@ class ProjectHelper:
                 self.project_cache.append(Project(name=name, id=id))
         return list(self.project_cache)
 
-    def open_project_by_id(self, project_id):
+    def open_project(self, project_name):
         wd = self.app.wd
         for element in wd.find_elements_by_xpath("//tr[contains(@class, 'row-')]"
                                                  "[not(contains(@class, 'category'))][not(ancestor::a)]"):
             fields = element.find_elements_by_tag_name("td")
             id = fields[0].find_element_by_tag_name("a").get_attribute("href").split("=", 1)[1]
             name = fields[0].find_element_by_tag_name("a").text
-            if id == project_id:
+            if name == project_name:
                 wd.find_element_by_link_text(name).click()
                 break
