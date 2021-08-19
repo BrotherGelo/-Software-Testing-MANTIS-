@@ -628,9 +628,9 @@ console.warn: services.settings: main/doh-config Signature verified failed. Retr
 console.log: WebExtensions: reset-default-search: starting.
 console.log: WebExtensions: reset-default-search: No addons in our list are installed.
 JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
-lure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
-[Parent 16176, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
-1629196787895	geckodriver	INFO	Listening on 127.0.0.1:55940
+1629201174370	Marionette	INFO	Stopped listening on port 52223
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+7.0.0.1:55940
 1629196790958	mozrunner::runner	INFO	Running command: "E:\\FireFox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\OOSIPE~1\\AppData\\Local\\Temp\\rust_mozprofileCg0zuV"
 1629196791197	Marionette	INFO	Marionette enabled
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\oosipenko\\AppData\\Local\\Temp\\rust_mozprofileCg0zuV\\search.json.mozlz4", (void 0)))
@@ -657,9 +657,9 @@ console.warn: services.settings: main/doh-config Signature verified failed. Retr
 console.log: WebExtensions: reset-default-search: starting.
 console.log: WebExtensions: reset-default-search: No addons in our list are installed.
 JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
-1:51729
-1629197714750	mozrunner::runner	INFO	Running command: "E:\\FireFox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\OOSIPE~1\\AppData\\Local\\Temp\\rust_mozprofileoMEo3b"
-1629197715037	Marionette	INFO	Marionette enabled
+1629201168909	Marionette	INFO	Stopped listening on port 54774
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+nabled
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\oosipenko\\AppData\\Local\\Temp\\rust_mozprofileoMEo3b\\search.json.mozlz4", (void 0)))
 1629197717121	Marionette	INFO	Listening on port 51740
 
@@ -675,4 +675,12 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 1629197978637	Marionette	INFO	Listening on port 54785
 1629197978980	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 1629197997470	Marionette	INFO	Stopped listening on port 54785
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+1629208373966	geckodriver	INFO	Listening on 127.0.0.1:56068
+1629208377014	mozrunner::runner	INFO	Running command: "E:\\FireFox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\OOSIPE~1\\AppData\\Local\\Temp\\rust_mozprofileXATtBn"
+1629208377617	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\oosipenko\\AppData\\Local\\Temp\\rust_mozprofileXATtBn\\search.json.mozlz4", (void 0)))
+1629208380202	Marionette	INFO	Listening on port 56081
+1629208380722	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1629208384017	Marionette	INFO	Stopped listening on port 56081
 JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
